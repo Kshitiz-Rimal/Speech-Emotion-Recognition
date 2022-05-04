@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Home</title>
+
+    <style>
+        body{
+            background-color: white;
+            text-align: center;
+    
+        }
+        h1{
+            color:#515E63;
+        }
+        /* css for record button */
+        .recorder{
+            margin:40px auto;
+            margin-bottom:0px;
+        }
+
+        .recorder:hover,
+        .recorder:focus {
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+        color: rgba(0, 0, 0, 0.65);
+        }
+
+        .recorder:hover {
+        transform: translateY(-1px);
+        }
+
+        .recorder:active {
+        background-color: #F0F0F1;
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.06) 0 4px 7px;
+        color: rgba(0, 0, 0, 0.65);
+        transform: translateY(0);
+        }
+
+        /* loader for recording */
+        .loader{
+            width: 400px;
+            margin:20px auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>This is a web application to detect the emotional state of the recorded audio</h1>
+    <form action="#" method="post">
+        <button type="submit" class=" recorder btn btn-lg btn-success" id="record" name="record"value="submit">Record</button>
+
+    </form>
+
+    <div class="progress loader">
+        <div class="progress-bar progress-bar-striped bg-info"  id="load" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+
+
+
+
+    <script>
+
+        var checkInfo = document.getElementById("record");
+        
+        checkInfo.addEventListener("click", function(){
+            setTimeout(function(){
+                var x=0;
+                setInterval(function(){
+                    x+=1.315789;
+                    document.getElementById("load").style.width = x+"%";
+
+                },50);
+
+            },2000);           
+        });
+
+    </script>
+</body>
+</html>
